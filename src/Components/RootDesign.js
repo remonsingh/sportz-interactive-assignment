@@ -14,19 +14,11 @@ const styling = makeStyles((design) => ({
       width: 135,
       height: 135,
     },
-<<<<<<< HEAD
     img: {
     display: 'block',
       maxWidth:  '100%',
       maxHeight:'100%',
       margin: 'auto',
-=======
-              img: {
-   margin: 'auto',
-      display: 'block',
-         maxWidth: '100%',
-      maxHeight: '100%',
->>>>>>> 3070a19233423440487fc8284dad13796504300a
     },
        searchWrap:{
             marginBottom: '6%'
