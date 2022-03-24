@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const styling = makeStyles((design) => ({
     root: {
-      flexGrow: 1,
+      flexGrow: 4,
     },
     paper: {
       padding: design.spacing(2),
@@ -11,8 +11,8 @@ const styling = makeStyles((design) => ({
       marginTop:'5%',
     },
     image: {
-      width: 128,
-      height: 128,
+      width: 135,
+      height: 135,
     },
     img: {
       margin: 'auto',
@@ -21,7 +21,7 @@ const styling = makeStyles((design) => ({
       maxHeight: '100%',
     },
     searchWrap:{
-        marginBottom: '4%'
+        marginBottom: '6%'
     }
 }));
 
