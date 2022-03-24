@@ -1,28 +1,23 @@
 import React, {useState, useEffect} from "react";
-import styling from './RootDesign'
+import Gridder from '@material-ui/core/Grid';
 //import SearchTwoTone from '@mui/icons-material/SearchTwoTone';
 import { FaSearchPlus } from "react-icons/fa";
 import { TextField } from '@material-ui/core';
 import './DisplayPlayers.css';
 import AdoInput from '@material-ui/core/InputAdornment';
-import Gridder from '@material-ui/core/Grid';
+import styling from './RootDesign'
 import FormatType from '@material-ui/core/Typography';
 //import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 
-
-
-   function DisplayPlayers() {
-    const attri = styling();
-    const [descPlayer, setDescPlayer] = useState([])
-
+let arr = []
+function DisplayPlayers() {
+const [descPlayer, setDescPlayer] = useState([])
+const attri = styling();
     useEffect(() => {
       playersListFetch()
     }, [])
 
-    let arr = []
-
-const playersListFetch = async () => {
-    fetch("https://api.npoint.io/20c1afef1661881ddc9c")
+const playersListFetch = async () => {fetch("https://api.npoint.io/20c1afef1661881ddc9c")
       .then(res => res.json())
         .then( (output) => { output.playerList.forEach(data => {
            let playersImg = "";
@@ -58,8 +53,8 @@ const playersListFetch = async () => {
                 <p>Sportz Interactive Players</p>
             </header>
 
-            <div className={attri.searchWrap}>
-                <TextField label="Look for Players and Teams of Sportz Interactive" name="players" margin="normal" variant="standard" style={{width:'50%', marginLeft:'10%'}} onChange={whenAltered} underlinecolor="#49b2cc"
+ <div className={attri.searchWrap}>
+         <TextField label="Look for Players and Teams of Sportz Interactive" name="players" margin="normal" variant="standard" style={{width:'50%', marginLeft:'10%'}} onChange={whenAltered} underlinecolor="#49b2cc"
             
                    InputProps={{ startAdornment: (<AdoInput position="end"> <FaSearchPlus/> </AdoInput>)}}/>
                    
@@ -77,14 +72,14 @@ const playersListFetch = async () => {
             <img className={attri.img} alt="member" src={member.playersImg} /> 
              </div>
             </div>
-                <div style={{width:"70%"}}>
-                     <Gridder item xs={12} sm container>
+        <div style={{width:"70%"}}>
+               <Gridder item xs={12} sm container>
 
                                     {/* ----------Player Details----------- */}
-                                    <Gridder item xs container direction="column" spacing={2}>
-                                        <Gridder item xs>
-                                        {/* ----------Player Name------- */}
-                                            <FormatType gutterBottom variant="subtitle1">
+       <Gridder item xs container direction="column" spacing={2}>
+                    <Gridder item xs>
+            {/* ----------Player Name------- */}
+        <FormatType gutterBottom variant="subtitle1">
                                                <b> {member.PFName} </b>
                                             </FormatType>
                                             <FormatType variant="body2" gutterBottom>
@@ -99,21 +94,21 @@ const playersListFetch = async () => {
                                                 Match Time : {member.UpComingMatchesList[0].MDate !== "" ? new Date(member.UpComingMatchesList[0].MDate+" GMT").toLocaleString() : "-"}
                                             </FormatType>
                                             
-                                        </Gridder>
-                                    </Gridder>
+                      </Gridder>
+           </Gridder>
 
-                                    {/* --------------Player Value---------- */}
-                                    <Gridder item>
-                                        <FormatType className="playerValue" variant="subtitle1">${member.Value}</FormatType>
+                        {/* --------------Player Value---------- */}
+                            <Gridder item>
+               <FormatType className="playerValue" variant="subtitle1">${member.Value}</FormatType>
                                     </Gridder>
-                                </Gridder>
+                      </Gridder>
                             </div>
                         </div>
-                    </Gridder>
+             </Gridder>
                     
-                </Gridder> 
+         </Gridder> 
             ))}
-        </Gridder>
+     </Gridder>
     </div>
   );
   }
