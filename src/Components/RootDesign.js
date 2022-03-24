@@ -21,7 +21,7 @@ const styling = makeStyles((design) => ({
       maxHeight: '100%',
     },
     searchWrap:{
-        marginBottom: '2%'
+        marginBottom: '4%'
     }
 }));
 

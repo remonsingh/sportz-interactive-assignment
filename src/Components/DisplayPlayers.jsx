@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react";
 import styling from './RootDesign'
+//import SearchTwoTone from '@mui/icons-material/SearchTwoTone';
 import { FaSearchPlus } from "react-icons/fa";
 import { TextField } from '@material-ui/core';
 import './DisplayPlayers.css';
 import AdoInput from '@material-ui/core/InputAdornment';
 import Gridder from '@material-ui/core/Grid';
 import FormatType from '@material-ui/core/Typography';
+//import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+
 
 
    function DisplayPlayers() {
@@ -51,52 +54,49 @@ const playersListFetch = async () => {
 
   return ( 
                <div className={attri.root}>
-             <header className="App-header">
-                <p>Players List</p>
+             <header className="playerHeader">
+                <p>Sportz Interactive Players</p>
             </header>
 
             <div className={attri.searchWrap}>
-                <TextField label="Look for players/Team" name="players" margin="dense" variant="outlined" style={{width:'70%', marginLeft:'15%'}} onChange={whenAltered} underlinecolor="#49b2cc"
-                    InputProps={{ startAdornment: (<AdoInput position="start"> <FaSearchPlus/> </AdoInput>
-                        ),
-                        }}
-                />
+                <TextField label="Look for Players and Teams of Sportz Interactive" name="players" margin="normal" variant="standard" style={{width:'50%', marginLeft:'10%'}} onChange={whenAltered} underlinecolor="#49b2cc"
+            
+                   InputProps={{ startAdornment: (<AdoInput position="end"> <FaSearchPlus/> </AdoInput>)}}/>
+                   
             </div>
 
 
-
-
-            <Gridder container spacing={2} alignItems="flex-end" style={{backgroundColor:"lightgray" }}>
-            {descPlayer.map((player, i) => (
-                <Gridder item key={i} xs={12} md={6} >
-                    <Gridder item>
-                        <div className="App-grid">
-                            <div style={{width:"30%"}}>
-                            {/* --------Player Image------------------- */}
-                                <div className={attri.image}>
-                                    <img className={attri.img} alt="player" src={player.playersImg} /> 
-                                </div>
-                            </div>
-                            <div style={{width:"70%"}}>
-                                <Gridder item xs={12} sm container>
+<Gridder container spacing={4} alignItems="flex-end" style={{backgroundColor:"#6BAF92" }}>
+            {descPlayer.map((member, i) => (
+            <Gridder item key={i} xs={12} md={6} >
+               <Gridder item>
+                    <div className="playerGrid">
+                        <div style={{width:"50%"}}>
+                        {/* --------Player Image------------------- */}
+              <div className={attri.image}>
+            <img className={attri.img} alt="member" src={member.playersImg} /> 
+             </div>
+            </div>
+                <div style={{width:"70%"}}>
+                     <Gridder item xs={12} sm container>
 
                                     {/* ----------Player Details----------- */}
                                     <Gridder item xs container direction="column" spacing={2}>
                                         <Gridder item xs>
                                         {/* ----------Player Name------- */}
                                             <FormatType gutterBottom variant="subtitle1">
-                                               <b> {player.PFName} </b>
+                                               <b> {member.PFName} </b>
                                             </FormatType>
                                             <FormatType variant="body2" gutterBottom>
-                                                {player.SkillDesc}
+                                                {member.SkillDesc}
                                             </FormatType>
                                             {/* ----------Upcoming Match--------- */}
                                             <FormatType variant="body2" color="textSecondary">
-                                                Upcoming Match : {player.UpComingMatchesList[0].CCode !== "" ? player.UpComingMatchesList[0].CCode + " vs. " + player.UpComingMatchesList[0].VsCCode : "-"}
+                                                Upcoming Match : {member.UpComingMatchesList[0].CCode !== "" ? member.UpComingMatchesList[0].CCode + " vs. " + member.UpComingMatchesList[0].VsCCode : "-"}
                                             </FormatType>
                                             {/* -------Match Timming-------- */}
                                             <FormatType variant="body2" color="textSecondary">
-                                                Match Time : {player.UpComingMatchesList[0].MDate !== "" ? new Date(player.UpComingMatchesList[0].MDate+" GMT").toLocaleString() : "-"}
+                                                Match Time : {member.UpComingMatchesList[0].MDate !== "" ? new Date(member.UpComingMatchesList[0].MDate+" GMT").toLocaleString() : "-"}
                                             </FormatType>
                                             
                                         </Gridder>
@@ -104,7 +104,7 @@ const playersListFetch = async () => {
 
                                     {/* --------------Player Value---------- */}
                                     <Gridder item>
-                                        <FormatType className="playerValue" variant="subtitle1">${player.Value}</FormatType>
+                                        <FormatType className="playerValue" variant="subtitle1">${member.Value}</FormatType>
                                     </Gridder>
                                 </Gridder>
                             </div>
