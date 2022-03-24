@@ -1,0 +1,27 @@
+.App-grid {
+    display: flex;
+    border: 3px solid #eee;
+    cursor: pointer;
+    box-shadow: 0 3px 6px #097c0529;
+    background-color: #fbfffb;
+    border-radius: 10px;
+    opacity: 1;
+    margin: 2% 5% 1% 5%;
+    padding: 12px;
+  }
+  .playerValue {
+    color: #3512f7;
+    border: 1px solid black;
+    border-radius: 41%;
+  }
+  
+  .App-header {
+    background-color: #121320;
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 2%;
+  }
