@@ -1,6 +1,6 @@
-import { styleImplement } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-const styling = styleImplement((design) => ({
+const styling = makeStyles((design) => ({
     root: {
       flexGrow: 1,
     },
