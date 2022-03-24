@@ -11,21 +11,23 @@
 }
 
 .playerGrid {
-    border: 3px solid rgb(4, 27, 17);
-    cursor: pointer;
-    box-shadow: 0 3px 6px #097c0529;
-    background-color: #fbfffb;
-    border-radius: 25px;
-    opacity: 1;
-    margin: 2% 5% 2% 5%;
-    padding: 14px;
-    display: flex;
-  }
-  .playerValue {
-    background-color: rgb(136, 214, 184);
-    color: #05221c;
-    border: 2px solid black;
-    border-radius: 2%;
-  }
-  
-  
+  border: 3px solid rgb(4, 27, 17);
+  cursor: pointer;
+  box-shadow: 0 3px 6px #097c0529;
+  background-color: #fbfffb;
+  border-radius: 25px;
+  opacity: 1;
+  margin: 2% 5% 2% 5%;
+  padding: 14px;
+  display: flex;
+}
+.playerValue {
+  background-color: rgb(136, 214, 184);
+  color: #05221c;
+  border: 2px solid black;
+  border-radius: 2%;
+}
+
+.search-input {
+  margin-right: 10px;
+}
